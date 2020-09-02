@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./styles/maintenance.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <main>
+        <div class="layout">
+            <div class="dashboardSidebar" id="sidebar">
+                <div class="upperSidebar">
+                    <img src="./img/logo.svg" alt="logo">
+                    <a href="#"><i class="fa fa-bell fa-lg"></i></a>
+                    <i class="fa fa-times" id="close"></i>
+                </div>
+                <div class="lowerSidebar">
+                    <div class="user">
+                        <img src="./img/profile.svg" alt="user">
+                        <h4>Hello, ABC</h4>
+                    </div>
+                    <div class="links">
+                        <a href="#" class="active"><i class="fa fa-home"></i>Home</a>
+                        <a href="#"><i class="fa fa-briefcase"></i>Business</a>
+                        <a href="#"><i class="fa fa-cogs"></i>Maintenance</a>
+                        <a href="#"><i class="fa fa-headphones"></i>Support</a>
+                    </div>
+                </div>
+            </div>
+            <div class="dashboardContent">
+                <div class="upperContent">
+                    <a href="#">Logout</a>
+                    <div id="button"><i class="fa fa-bars"></i></div>
+                </div>
+                <div class="lowerContent">
+                    <div class="title">
+                        <h1>Maintenance</h1>
+                        <p></p>
+                    </div>
+                    <div class="statCards">
+                        <div class="pending">
+                            <p class="card-name">Pending Complaints</p>
+                            <p class="value">1500</p>
+                        </div>
+                        <div class="solved">
+                            <p class="card-name">Solved Complaints</p>
+                            <p class="value">1500</p>
+                        </div>
+                        <div class="total">
+                            <p class="card-name">Total Complaints</p>
+                            <p class="value">1500</p>
+                        </div>
+                    </div>
+                    <h3>Pending Complaint Details</h3>
+                    <div class="complaints_table">
+                        <table class="table">
+                            <thead>
+                                <th>Sr.</th>
+                                <th>Shop Name</th>
+                                <th>Mechanic Name</th>
+                                <th>Contact</th>
+                                <th>Resolved</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="Sr.">1</td>
+                                    <td data-label="Shop Name">ABC</td>
+                                    <td data-label="Mechanic Name">ABC</td>
+                                    <td data-label="Contact">123456</td>
+                                    <td data-label="Resolved"><a href="#">Resolved</a></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Sr.">1</td>
+                                    <td data-label="Shop Name">ABC</td>
+                                    <td data-label="Mechanic Name">ABC</td>
+                                    <td data-label="Contact">123456</td>
+                                    <td data-label="Resolved"><a href="#">Resolved</a></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Sr.">1</td>
+                                    <td data-label="Shop Name">ABC</td>
+                                    <td data-label="Mechanic Name">ABC</td>
+                                    <td data-label="Contact">123456</td>
+                                    <td data-label="Resolved"><a href="#">Resolved</a></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Sr.">1</td>
+                                    <td data-label="Shop Name">ABC</td>
+                                    <td data-label="Mechanic Name">ABC</td>
+                                    <td data-label="Contact">123456</td>
+                                    <td data-label="Resolved"><a href="#">Resolved</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h3>View On Map</h3>
+                        <div class="map" id="map_canvas">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const button = document.getElementById('button');
+        const close = document.getElementById('close');
+        button.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        })
+        close.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        })
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9Y9_KDeiRBLZorVqObm42FaX_XnAxJoY&">
+    </script>
+    <script>
+        var marker;
+        var map;
+        var my_data = JSON.parse('{{ my_data|safe }}');
+        console.log(my_data[0][2]);
+
+        for (var i = 0; i < my_data.length; i++) {
+
+            var str1 = "#link";
+            var str2 = i;
+            var a = document.createElement("a");
+            a.innerHTML = '&emsp;&emsp;&emsp;';
+            var text = document.createTextNode([i + 1] + "." + " " + my_data[i][2] + " " + my_data[i][3] + "  " + "  " + "  ");
+            a.appendChild(text);
+            // a.href="#rnd";
+            a.id = str1.concat(str2);
+            var x = my_data[i][0];
+            var y = my_data[i][1];
+            var passfoo = "myFunction(" + x + "," + y + ")";
+            a.setAttribute("onclick", passfoo);
+            a.setAttribute("data-toggle", "tab");
+            var element = document.getElementById("new");
+            element.appendChild(a);
+            var x = document.createElement("br");
+            a.appendChild(x);
+
+        }
+
+
+        function myFunction(x, y) {
+            changeMarkerPos(x, y);
+        }
+
+
+        function initialize() {
+            var styles = [{
+                stylers: [{
+                    saturation: -100
+                }]
+            }];
+            var styledMap = new google.maps.StyledMapType(styles, {
+                name: "Styled Map"
+            });
+            var mapProp = {
+                center: new google.maps.LatLng(19.261522, 75.194100),
+                zoom: 13,
+                panControl: false,
+                zoomControl: false,
+                mapTypeControl: false,
+                scaleControl: true,
+                streetViewControl: false,
+                overviewMapControl: false,
+                rotateControl: true,
+                scrollwheel: false,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            map = new google.maps.Map(document.getElementById("map_canvas"), mapProp);
+
+            map.mapTypes.set('map_style', styledMap);
+            map.setMapTypeId('map_style')
+
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng(19.261522, 75.194100),
+                animation: google.maps.Animation.DROP,
+                icon: 'https://cdn2.iconfinder.com/data/icons/flat-ui-icons-24-px/24/location-24-32.png',
+            });
+
+            marker.setMap(map);
+            map.panTo(marker.position);
+        }
+
+        function changeMarkerPos(lat, lon) {
+            myLatLng = new google.maps.LatLng(lat, lon)
+            marker.setPosition(myLatLng);
+            map.panTo(myLatLng);
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+</body>
+
+</html>

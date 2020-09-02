@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./styles/dashboard_home.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <main>
+        <div class="layout">
+            <div class="dashboardSidebar" id="sidebar">
+                <div class="upperSidebar">
+                    <img src="./img/logo.svg" alt="logo">
+                    <a href="#"><i class="fa fa-bell fa-lg"></i></a>
+                    <i class="fa fa-times" id="close"></i>
+                </div>
+                <div class="lowerSidebar">
+                    <div class="user">
+                        <img src="./img/profile.svg" alt="user">
+                        <h4>Hello, ABC</h4>
+                        <hr>
+                    </div>
+                    <div class="links">
+                        <a href="#" class="active"><i class="fa fa-home"></i>Home</a>
+                        <a href="#"><i class="fa fa-briefcase"></i>Business</a>
+                        <a href="#"><i class="fa fa-cogs"></i>Maintenance</a>
+                        <a href="#"><i class="fa fa-headphones"></i>Support</a>
+                    </div>
+                </div>
+            </div>
+            <div class="dashboardContent">
+                <div class="upperContent">
+                    <a href="#">Logout</a>
+                    <div id="button"><i class="fa fa-bars"></i></div>
+                </div>
+                <div class="lowerContent">
+                    <h1>This Month's Statistics</h1>
+                    <div class="cardgrid">
+                        <div class="card yellow">
+                            <i class="fa fa-shopping-cart fa-3x"></i>
+                            <div class="text">
+                                <p class="value">$10000</p>
+                                <p class="label">Sales</p>
+                            </div>
+                        </div>
+                        <div class="card green">
+                            <i class="fa fa-money"></i>
+                            <div class="text">
+                                <p class="value">$15000</p>
+                                <p class="label">Expense</p>
+                            </div>
+                        </div>
+                        <div class="card blue">
+                            <i class="fa fa-users fa-3x"></i>
+                            <div class="text">
+                                <p class="value">1500</p>
+                                <p class="label">Customers</p>
+                            </div>
+                        </div>
+                        <div class="card grey">
+                            <img src="./img/icons/revenue.svg" alt="revenue">
+                            <div class="text">
+                                <p class="value">$5000</p>
+                                <p class="label">Revenue</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const button = document.getElementById('button');
+        const close = document.getElementById('close');
+        button.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        })
+        close.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<body></body>
+<br><br><br>
+<div class="container-fluid row" style="background-color: #F2F2F2; margin-left: 0px; margin-right: 0px;">
+    <div class="col-md-6 m-auto">
+        <h1 class="col-md-6" style="padding-left: 45%;">Savings</h1>
+        <h1 class="col-md-6" style="padding-left: 45%;">Calculator</h1>
+    </div>
+    <img class="col-md-6" src="{% static 'userapp/svg/savings_art.svg' %}" alt="savings" style="width: fit-content; height:fit-content; ">  
+</div>
+<br>
+<div class="row container">
+    <div class="col-md-2"></div>
+    <div class="col-md-10 row" style="background-color: #445552; border-radius: 10px;">
+        <h3 class="col-md-12 text-white text-center pb-3 mt-5">Calculate your monthly savings if you're switching to Electric Vehicles.</h3>
+        <div class="col-md-1"></div>
+        <div class="col-md-4" style="background-color: white; border-radius: 10px;">
+            <h4 class="text-center">Step 1:</h4>
+            <div class="text-center mt-3">Choose the vehicle brand</div>
+            <div class="text-center mt-3">
+                <select name="" id="">
+                    <option selected disabled = "true">-- Select an EV --</option>
+                    {% for EV in Vehicle %}
+                        <option>{{ EV.company }}</option>
+                    {% endfor %}
+                </select>                
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-4" style="background-color: white; border-radius: 10px;">
+            <h4 class="text-center">Step 2:</h4>
+            <div class="text-center mt-3">Enter the average distance you travel with your car everyday</div>
+            <div class="text-center mt-3 mb-3">
+                <input type='number' id='nameField'> km(s)
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-12 mt-5"></div>
+    </div>
+
+    <div class="col-md-2"></div>
+    <div class="row col-md-10">
+        <h3 class="col-md-12 text-center mt-3 mb-5 pb-3 pt-2">Cost when you drive (per km.)...</h3>
+        <div class="col-md-5 text-center" style="background-color: #F2F2F2;  border-radius: 10px;">
+            <h4 class="mb-2 pt-3">Fuelled Vehicle</h4><hr>
+            <h5 class="pb-3">₹ <span id='nameDisplay'>0</span> monthly</h5>           
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-5 text-center" style="background-color: #F2F2F2;  border-radius: 10px;">
+            <h4 class="mb-2 pt-3">Electric Vehicle</h4><hr>
+            <h5 class="pb-3">₹ <span id='EV'>0</span> monthly</h5>           
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+    <div class="row col-md-10 text-center">
+        <h3 class="col-md-12 mt-3 pt-2 pb-5">You save</h3><hr>
+        <h5 class="col-md-6 text-center">₹ <span id='monthly_savings'>0</span> monthly</h5>           
+        <h5 class="col-md-6 text-center">₹ <span id='yearly_savings'>0</span> yearly</h5>  
+    </div>
+
+    <div class="col-md-12" style="padding-bottom: 50px;"></div>
+    <!-- Mileage Calculator -->
+    <div class="col-md-2"></div>
+    <div class="col-md-10 row" style="background-color: #445552; border-radius: 10px;">
+        <h3 class="col-md-12 text-white text-center pb-3 mt-5">Want to know how much your EV can travel ? 🤔</h3>
+        <div class="col-md-1"></div>
+        <div class="col-md-4" style="background-color: white; border-radius: 10px;">
+            <h4 class="text-center">Step 1:</h4>
+            <div class="text-center mt-3">Choose the vehicle brand</div>
+            <div class="text-center mt-3">
+                <select name="" id="">
+                    <option selected disabled = "true">-- Select an EV --</option>
+                    {% for EV in Vehicle %}
+                        <option>{{ EV.company }}</option>
+                    {% endfor %}
+                </select>                
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-4" style="background-color: white; border-radius: 10px;">
+            <h4 class="text-center">Step 2:</h4>
+            <div class="text-center mt-3">Enter the current charging status of your EV</div>
+            <div class="text-center mt-3 mb-3">
+                <input type='number' id='batteryPercent' aria-valuemin="0" aria-valuemax="100"> %
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-12 mt-5"></div>
+    </div>
+
+    <div class="col-md-2"></div>
+    <div class="row col-md-10">
+        <h3 class="col-md-12 text-center mt-3 mb-5 pb-3 pt-2">Distance you can travel with <span id="percentDisplay">0</span> % charge</h3>
+        <div class="col-md-3"></div>
+        <div class="col-md-6 text-center" style="background-color: #F2F2F2;  border-radius: 10px;">
+            <h5 class="pb-3"><span id='mileage'>0</span> km(s)</h5>           
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    
+
+
+    <div class="col-md-2"></div>
+    <div class="row col-md-10 pt-5">
+        <p class="text-muted">* Disclaimer: This tool is only intended to provide an estimate of potential 
+            savings. Actual results will vary. Customers may not realize similar energy 
+            savings. Vehicle data is subject to change 
+            without notice. This is the estimated residential electricity rate for the 
+            utility. This rate may not include tiered or time-of-use rates. Rates change 
+            periodically. Utility does not warrant or represent that this data is accurate. 
+            In no event shall the utility or its suppliers be liable for any special, 
+            indirect or consequential damages or any damages whatsoever, including, but not 
+            limited to claims associated with the accuracy of this data or information.
+        </p>    
+    </div>
+</div>
+<br><br>
+</body>

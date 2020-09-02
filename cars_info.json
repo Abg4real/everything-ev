@@ -1,0 +1,93 @@
+{
+    "2wheelers": [{
+            "src": "https://imgd.aeplcdn.com/1200x900/bw/models/hero-electric-optima-lead-acid20200104210309.jpg",
+            "Name": "Hero Electric Optima Plus",
+            "Range": "70 km per Charge",
+            "Price": "₹ 42,190",
+            "Speed": "40 km/hr",
+            "Engine Power": "250 W",
+            "Charge Time": "6 to 8 hours",
+            "link": "https://heroelectric.in/"
+        },
+        {
+            "src": "https://imgd.aeplcdn.com/360x202/bw/models/hero-electric-cruz-standard-744.jpg?20190103151915&q:85",
+            "Name": "Hero Electric Cruz",
+            "Range": "70 km per Charge",
+            "Price": "₹ 56,000",
+            "Speed": "25 km/hr",
+            "Engine Power": "250 W",
+            "Charge Time": "6 to 8 hours",
+            "link": "https://heroelectric.in/"
+        },
+        {
+            "src": "https://bd.gaadicdn.com/processedimages/hero-motocorp/hero-motocorp-dash/source/m_dash_11572850422.jpg?tr:w-439,e-sharpen",
+            "Name": "Hero Electric Dash",
+            "Range": "60 km per Charge",
+            "Price": "₹ 50,000",
+            "Speed": "25 km/hr",
+            "Engine Power": "250 W",
+            "Charge Time": "4 hours",
+            "link": "https://heroelectric.in/"
+        },
+        {
+            "src": "https://img.indianautosblog.com/2018/02/Hero-Electric-AXLHE-20-press-front-right-quarter.png",
+            "Name": "Hero Electric AXLHE-20",
+            "Range": "110 km per Charge",
+            "Price": "₹ 55,000",
+            "Speed": "85 km/hr",
+            "Engine Power": "6000 W",
+            "Charge Time": "6 to 8 hours",
+            "link": "https://heroelectric.in/"
+        },
+        {
+            "src": "https://imgd.aeplcdn.com/1280x720/bw/models/hero-electric-maxi-standard-746.jpg?20190103151915&q:80",
+            "Name": "Hero Electric Maxi",
+            "Range": "70 km per Charge",
+            "Price": "₹ 32,490",
+            "Speed": "25 km/hr",
+            "Engine Power": "0.33 BHP",
+            "Charge Time": "6 to 8 hours",
+            "link": "https://heroelectric.in/"
+        },
+        {
+            "src": "https://heroelectric.in/wp-content/uploads/2018/10/Optima-hs500_blue_3-4-right-view-1.png",
+            "Name": "Hero Electric Optima E5",
+            "Range": "55 km per Charge",
+            "Price": "₹ 61,866",
+            "Speed": "37 km/hr",
+            "Engine Power": "550 - 1200 W",
+            "Charge Time": "4 - 5 hours",
+            "link": "https://heroelectric.in/optima-1/"
+        },
+        {
+            "src": "https://heroelectric.in/wp-content/uploads/2018/10/N1.png",
+            "Name": "Hero Electric NYX E5",
+            "Range": "60 km per Charge",
+            "Price": "₹ 65,990",
+            "Speed": "40 km/hr",
+            "Engine Power": "600 - 1200 W",
+            "Charge Time": "4 hours",
+            "link": "https://heroelectric.in/nyx-2/"
+        },
+        {
+            "src": "https://heroelectric.in/wp-content/uploads/2020/04/Photon_silver_500x500.png",
+            "Name": "Hero Electric Photon 48V",
+            "Range": "80 km per Charge",
+            "Price": "₹ 65,464",
+            "Speed": "45 km/hr",
+            "Engine Power": "1200 - 1800 W",
+            "Charge Time": "4 to 5 hours",
+            "link": "https://heroelectric.in/photon/"
+        },
+        {
+            "src": " https://heroelectric.in/wp-content/uploads/2018/10/Flash-hs500_silver_right-side-view12-2.png ",
+            "Name": "Hero Electric Flash",
+            "Range": "65 km per Charge",
+            "Price": "₹ 39,990",
+            "Speed": "25 - 40 km/hr",
+            "Engine Power": "250 W",
+            "Charge Time": "4 hours",
+            "link": "https://heroelectric.in/flash_e2_la/"
+        }
+    ]
+}
